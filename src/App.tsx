@@ -1,36 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.scss'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-function App() {
-  const [count, setCount] = useState(0)
+import { ReactionProvider } from './context/ReactionProvider.tsx';
 
+import routes from './routes';
+
+import Main from './pages/Main.tsx';
+import Post from './pages/Post.tsx';
+
+const App = () => {
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Блог</h1>
-      <p>Здесь мы делимся интересными кейсами из наших проектов, пишем про IT, а также переводим зарубежные статьи</p>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-      Интернет - огромный ресурс, позволяющий продвигать свои услуги практически на любую аудиторию. Ежедневно в сеть выходит более 5 миллиардов людей - каждый из них может увидеть вашу рекламу и стать вашим потенциальным клиентом. Рассказываем, как правильно настраивать рекламу в интернете.
-      </p>
-    </>
-  )
-}
+    <ReactionProvider postsCount={5}>
+      <BrowserRouter>
+        <Routes>
+          <Route path={routes.mainPage()} element={<Main />} />
+          <Route path={routes.postPage()} element={<Post postId={1} />} />
+        </Routes>
+      </BrowserRouter>
+    </ReactionProvider>
+  );
+};
 
 export default App

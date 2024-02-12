@@ -1,0 +1,80 @@
+.post-card {
+  display: flex;
+  flex-direction: column;
+
+  height: fit-content;
+
+  word-wrap: break-word;
+  overflow: hidden;
+
+  background: #ffffff;
+  border: 1px solid #f4f4f4;
+  border-radius: 12px;
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.04), 0 2px 6px 0 rgba(0, 0, 0, 0.04), 0 10px 20px 0 rgba(0, 0, 0, 0.04);
+
+  &__image {
+    width: 100%;
+  }
+
+  &__content {
+    padding: 24px 16px 32px 16px;
+  }
+
+  &__title {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 115%;
+
+    overflow: hidden;
+    overflow-wrap: break-all;
+
+    margin: 0;
+  }
+
+  &__header {
+    margin-bottom: 24px; 
+  }
+
+  &__footer {
+    flex-wrap: wrap;
+  }
+
+  &__header, &__footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  &__footer_end {
+    justify-content: end;
+  }
+
+  &__body {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    font-size: 24px;
+    line-height: 133%;
+
+    margin: 32px 0;
+  }
+
+  &_first {
+    column-span: all;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .post-card {
+    &__header {
+      flex-wrap: wrap;
+    }
+
+    &__body {
+      -webkit-line-clamp: 2;
+    }
+  }
+}

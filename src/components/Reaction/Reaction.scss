@@ -1,0 +1,47 @@
+.reactions {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  max-width: max-content;
+
+  color: #4f4f4f;
+  font-size: 16px;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__button {
+    line-height: 0.5em;
+
+    padding: 0;
+
+    background-color: transparent;
+    border: none;
+  }
+
+  &__icon {
+    width: 32px;
+    height: 32px;
+    
+    fill: #959298;
+    transition: ease 0.1s;
+
+    cursor: pointer;
+    
+    &:hover {
+      fill: #6b6b69;
+    }
+
+    &_liked, &_liked:hover {
+      fill: #219653;
+    }
+
+    &_disliked, &_disliked:hover {
+      fill: #EB5757;
+    }
+
+  }
+}
