@@ -62,7 +62,7 @@ const Main = () => {
       </p>
       <form className="form" onSubmit={handleSubmit}>
         <svg className="form__icon">
-          <use href="../public/img/sprites.svg#search" />
+          <use href="./img/sprites.svg#search" />
         </svg>
         <input
           value={searchValue}

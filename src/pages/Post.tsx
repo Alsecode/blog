@@ -50,7 +50,7 @@ const Post: React.FC<{ postId: number }> = ({ postId }) => {
       <div className="post__header">
         <Link className='post__back-btn' to={routes.mainPage()}>
           <svg className='post__back-icon'>
-            <use href='../public/img/sprites.svg#arrow'/>
+            <use href='./img/sprites.svg#arrow'/>
           </svg>
           Вернуться к статьям
         </Link>

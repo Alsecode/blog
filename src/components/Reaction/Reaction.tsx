@@ -16,7 +16,7 @@ const Reaction = ({ likesCount, dislikesCount, postId }: ReactionProps) => {
       <div className='reactions__item'>
         <button className='reactions__button' onClick={() => updateReaction(postId, 'like')}>
           <svg className={`reactions__icon ${reactions[postId].likeClicked ? 'reactions__icon_liked' : ''}`}>
-            <use href='../public/img/sprites.svg#like' />
+            <use href='./img/sprites.svg#like' />
           </svg>
         </button>
         <span>{likesCount}</span>
@@ -24,7 +24,7 @@ const Reaction = ({ likesCount, dislikesCount, postId }: ReactionProps) => {
       <div className='reactions__item'>
         <button className='reactions__button' onClick={() => updateReaction(postId, 'dislike')}>
           <svg className={`reactions__icon ${reactions[postId].dislikeClicked ? 'reactions__icon_disliked' : ''}`}>
-            <use href='../public/img/sprites.svg#dislike' />
+            <use href='./img/sprites.svg#dislike' />
           </svg>
         </button>
         <span>{dislikesCount}</span>
